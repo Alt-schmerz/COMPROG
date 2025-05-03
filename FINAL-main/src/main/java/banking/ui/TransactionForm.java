@@ -144,8 +144,10 @@ public class TransactionForm extends JFrame {
         cancelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
-                new GUImain();
+                SwingUtilities.invokeLater(() -> {
+                    dispose();
+                    new GUImain();
+                });
             }
         });
     }

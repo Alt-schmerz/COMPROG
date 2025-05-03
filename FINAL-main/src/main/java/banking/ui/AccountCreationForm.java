@@ -212,8 +212,10 @@ public class AccountCreationForm extends JFrame {
                 throw new IllegalArgumentException("Unknown account type");
         }
         
+        String accountNumber = accountManager.getLatestAccountNumber();
         JOptionPane.showMessageDialog(this,
-                "Account created successfully!", "Account Created", JOptionPane.INFORMATION_MESSAGE);
+                "Account created successfully!\nYour account number is: " + accountNumber, 
+                "Account Created", JOptionPane.INFORMATION_MESSAGE);
         
         dispose();
         new GUImain();
